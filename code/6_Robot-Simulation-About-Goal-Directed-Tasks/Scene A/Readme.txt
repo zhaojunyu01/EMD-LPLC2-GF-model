@@ -1,0 +1,1 @@
+boxSpawn.m is used to generate scenes in Gazebo.You need to manually add SpotLight model to the scene and set the coordinates to (0,0,2), the brightness turn to the brightest, and the intensity attenuation turn to zero attenuation.
