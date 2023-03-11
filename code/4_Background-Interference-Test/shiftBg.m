@@ -14,7 +14,7 @@ for i = 1:n
         j = j+1;
         filename = filenames{i};
         filepath = fullfile(directory,filename);
-        BgImg(:,:,j) = rgb2gray(imread(filepath));            % uint8[0 255];
+        BgImg(:,:,j) = imread(filepath);            % uint8[0 255];
     end
 end
 
