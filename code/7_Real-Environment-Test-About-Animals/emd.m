@@ -21,11 +21,6 @@ Hi_Off = zeros(EMD_nx, EMD_ny);
 Ve_Off = zeros(EMD_nx, EMD_ny);
 Vi_Off = zeros(EMD_nx, EMD_ny);
 
-H_On = zeros(EMD_nx, EMD_ny);
-V_On = zeros(EMD_nx, EMD_ny);
-H_Off = zeros(EMD_nx, EMD_ny);
-V_Off = zeros(EMD_nx, EMD_ny);
-
 for i =1:(EMD_nx+1)
     for j =1:(EMD_ny+1)
         Fh(i, j) = b_high(1, 1)*(newpicture(i, j)-picture(i, j))+b_high(1, 2)*Fh_before(i, j);    % high-pass filtering
