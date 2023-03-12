@@ -27,3 +27,4 @@ patt = patt_1(1:2:end,1:2:end,:);
 patt = im2uint8(patt);                                        % uint8[0 255]; Bg = 255, Fg = 0;
 PATT = patt-anti_Bg;                                          % uint8[0 255] spiilover effect
 PATT = im2double(PATT);
+end
