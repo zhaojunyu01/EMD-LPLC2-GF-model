@@ -6,8 +6,6 @@ function LPLC2_core = loom(stimulus,n)
 load(stimulus);
 patt = 255*patt(1:4:end, 1:4:end,:);
 tt = size(patt,3);
-
- 
 STEP = 0.01;                          % temporal resolution of EMD in seconds
 
 figure(1)
@@ -35,9 +33,7 @@ b_high(1, 2) = b_high(1, 1);
 EMD_nx=size(patt, 1)-1;  
 EMD_ny=size(patt, 2)-1;  
 Fh_before = zeros(EMD_nx+1, EMD_ny+1);
-Fd_On_before=zeros(EMD_nx+1, EMD_ny+1); 
 Fd_Off_before=zeros(EMD_nx+1, EMD_ny+1); 
-
 
 newpicture = patt(:, :, 1); 
 readed = 1;
@@ -46,7 +42,7 @@ for i = 1:size(patt, 3)-1
     picture = newpicture;
     readed = readed+1;
     newpicture = patt(:, :,readed );   
-    [Fh, Fd_On, Fd_Off, He_Off(:,:,i), Hi_Off(:,:,i), Ve_Off(:,:,i), Vi_Off(:,:,i)] = emd(EMD_nx, EMD_ny, a_low, b_high, Fh_before, Fd_On_before, Fd_Off_before, picture, newpicture);
+    [Fh, Fd_Off, He_Off(:,:,i), Hi_Off(:,:,i), Ve_Off(:,:,i), Vi_Off(:,:,i)] = emd(EMD_nx, EMD_ny, a_low, b_high, Fh_before, Fd_Off_before, picture, newpicture);
     
     LP(:,:,1,i) = Hi_Off(:,:,i); % leftward motion
     LP(:,:,2,i) = He_Off(:,:,i); % rightward motion
@@ -56,7 +52,6 @@ for i = 1:size(patt, 3)-1
     LPLC2(:,:,i) = lplc2conv2(LP(:,:,:,i),n);
 
     Fh_before = Fh;
-    Fd_On_before = Fd_On;
     Fd_Off_before = Fd_Off; 
 
     %collect the data from LPLC2
