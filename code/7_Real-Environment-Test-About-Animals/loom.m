@@ -62,7 +62,7 @@ for i = 1:size(patt, 3)-1
     LP(:,:,3,i) = Vi_On(:,:,i)+Vi_Off(:,:,i); % upward motion
     LP(:,:,4,i) = Ve_On(:,:,i)+Ve_Off(:,:,i); % downward motion
     
-    LPLC2(:,:,i) = my2_conv2(LP(:,:,:,i));
+    LPLC2(:,:,i) = lplc2conv2(LP(:,:,:,i));
 
     Fh_before = Fh;
     Fd_On_before = Fd_On;
