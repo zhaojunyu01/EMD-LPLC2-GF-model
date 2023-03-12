@@ -61,15 +61,3 @@ for idx = 1:frame
 end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
