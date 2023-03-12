@@ -15,7 +15,6 @@ Vth = -50;                                        % tuned threshold
 Vre = -70;                                        % repolarization potential
 
 h = step/20;
-T = t0:h:t;
 v(1) = V0;
 w = 250;                                          % amplifier of I (current)
 Normal_I1 = 2500;                                 % the normalization factor of I1: Here is the ceiling of LPLC2 activited number when RF_side is 100
@@ -51,3 +50,4 @@ for i = 1:N
     
 end
 ODE_timing = toc;
+end
