@@ -25,6 +25,6 @@ anti_Bg = imresize(anti_BgImg, [300,400]);
 patt_1 = loomingObject(tao);               % double[0 1]; Bg = 1, Fg = 0;
 patt = patt_1(1:2:end,1:2:end,:);
 patt = im2uint8(patt);                                        % uint8[0 255]; Bg = 255, Fg = 0;
-PATT = patt-anti_Bg;                                          % uint8[0 255] spiilover effect
+PATT = patt-anti_Bg;                                          % uint8[0 255] spillover effect
 PATT = im2double(PATT);
 end
