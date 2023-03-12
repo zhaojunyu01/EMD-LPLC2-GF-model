@@ -5,8 +5,6 @@ function [patt, nums] = loom(tao)
 
 patt = shiftBg(tao); % pixel value in range 0~1
 tt = size(patt,3);
-
- 
 STEP = 0.01;                          % temporal resolution of EMD in seconds
 
 figure(1)
@@ -36,7 +34,6 @@ EMD_ny=size(patt, 2)-1;
 Fh_before = zeros(EMD_nx+1, EMD_ny+1);
 Fd_On_before=zeros(EMD_nx+1, EMD_ny+1); 
 Fd_Off_before=zeros(EMD_nx+1, EMD_ny+1); 
-
 
 newpicture = patt(:, :, 1); 
 readed = 1;
